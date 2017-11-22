@@ -23,5 +23,12 @@ Thermostat.prototype.reset = function () {
 Thermostat.prototype.energyUsage = function () {
   if (this.temperature < 18) return "Low-usage";
   if (this.temperature < 25) return "Medium-usage";
-  if (this.temperature >= 25) return "High-usage"; 
+  if (this.temperature >= 25) return "High-usage";
 };
+
+Thermostat.prototype.switchMode = function () {
+  this.powerSaving = !this.powerSaving
+  if (this.powerSaving == true && this.temperature > 25) {
+    this.temperature = 25;
+  }
+}
