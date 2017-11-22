@@ -8,8 +8,13 @@ describe('Thermostat', function(){
   });
 
   describe('when created', function(){
-    it('has a tempreture of 20 degrees', function(){
+
+    it('has a temperature of 20 degrees', function(){
       expect(thermostat.temperature).toEqual(20);
+    });
+
+    it('power saving mode on by default', function(){
+      expect(thermostat.powerSaving).toEqual(true);
     });
   });
 
@@ -40,6 +45,7 @@ describe('Thermostat', function(){
           .toThrow('Cannot go higher than 25 degrees when power saving');
       });
     });
+
     describe('when off', function () {
       it('has a maximum temperature of 32 degrees', function () {
         thermostat.temperature = 32;
@@ -47,6 +53,12 @@ describe('Thermostat', function(){
         expect(function() { thermostat.increaseTemperature() })
           .toThrow('Cannot go higher than 32 degrees');
       });
+    });
+  });
+  describe('reset temperature', function() {
+    it('should set temperature to 20', function() {
+      thermostat.reset();
+      expect(thermostat.temperature).toEqual(20);
     });
   });
 });

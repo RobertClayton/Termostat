@@ -15,3 +15,7 @@ Thermostat.prototype.increaseTemperature = function() {
     throw ('Cannot go higher than 32 degrees');
   this.temperature += 1;
 };
+
+Thermostat.prototype.reset = function () {
+  this.temperature = 20;
+};
