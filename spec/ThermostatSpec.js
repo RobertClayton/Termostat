@@ -61,4 +61,19 @@ describe('Thermostat', function(){
       expect(thermostat.temperature).toEqual(20);
     });
   });
+  describe('current energy usage', function() {
+    it('should return low usage if less than 18', function () {
+      thermostat.temperature = 17;
+      expect(thermostat.energyUsage()).toEqual('Low-usage');
+    });
+    it('should return medium usage if less than 25', function () {
+      thermostat.temperature = 24;
+      expect(thermostat.energyUsage()).toEqual('Medium-usage');
+    });
+    it('should return high usage if greater than or equal to 25', function () {
+      thermostat.temperature = 27;
+      expect(thermostat.energyUsage()).toEqual('High-usage');
+    });
+  });
+
 });

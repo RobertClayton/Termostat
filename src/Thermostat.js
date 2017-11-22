@@ -19,3 +19,9 @@ Thermostat.prototype.increaseTemperature = function() {
 Thermostat.prototype.reset = function () {
   this.temperature = 20;
 };
+
+Thermostat.prototype.energyUsage = function () {
+  if (this.temperature < 18) return "Low-usage";
+  if (this.temperature < 25) return "Medium-usage";
+  if (this.temperature >= 25) return "High-usage"; 
+};
