@@ -26,8 +26,19 @@ describe('Thermostat', function(){
 
     it('cannot go below ten degrees', function (){
       thermostat.temperature = 10;
-      expect(function() { thermostat.decreaseTemperature() }).toThrow("Cannot go below 10 degrees!");
+      expect(function() { thermostat.decreaseTemperature() })
+        .toThrow("Cannot go below 10 degrees!");
+    });
+  });
 
+  describe('power saving mode', function() {
+    describe('when on', function () {
+      it('has a maximum temperature of 25 degrees', function () {
+        thermostat.temperature = 25;
+        thermostat.powerSaving = true;
+        expect(function() { thermostat.increaseTemperature() })
+          .toThrow('Cannot go higher than 25 degrees when power saving');
+      });
     });
   });
 });
