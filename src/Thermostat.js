@@ -3,6 +3,7 @@ function Thermostat() {
 };
 
 Thermostat.prototype.decreaseTemperature = function() {
+  if (this.temperature === 10) throw ("Cannot go below 10 degrees!");
   this.temperature -= 1;
 };
 
