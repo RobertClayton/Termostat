@@ -1,0 +1,37 @@
+<head>
+  <script src='../src/Thermostat.js' >  </script>
+</head>
+
+<body>
+  <form action='/increaseTemperature' method='get'>
+    <input type='submit' value='Up'>
+  </form>
+  <form action='/decreaseTemperature' method='get'>
+    <input type='submit' value='Down'>
+  </form>
+  <form action='/resetTemperature' method='get'>
+    <input type='submit' value='Reset'>
+  </form>
+  <form action='/switchMode' method='get'>
+    <input type='submit' value='Switch Mode'>
+  </form>
+  <form action='/saving' method='get'>
+    <input type='submit' value='Energy Saving'>
+  </form>
+
+  <script>
+      var thermostat = new Thermostat();
+      document.write(thermostat.energyUsage())
+  </script>
+  <br>
+  <script>
+      document.write('Current temperature: ' + thermostat.temperature)
+  </script>
+  <br>
+  <script>
+      document.write('Energy Mode: ')
+      thermostat.powerSaving ? document.write("On") : document.write("Off")
+  </script>
+
+
+</body>
