@@ -1,37 +1,35 @@
 <head>
-  <script src='../src/Thermostat.js' >  </script>
 </head>
 
 <body>
-  <form action='/increaseTemperature' method='get'>
-    <input type='submit' value='Up'>
-  </form>
-  <form action='/decreaseTemperature' method='get'>
-    <input type='submit' value='Down'>
-  </form>
-  <form action='/resetTemperature' method='get'>
-    <input type='submit' value='Reset'>
-  </form>
-  <form action='/switchMode' method='get'>
-    <input type='submit' value='Switch Mode'>
-  </form>
-  <form action='/saving' method='get'>
-    <input type='submit' value='Energy Saving'>
-  </form>
-
-  <script>
-      var thermostat = new Thermostat();
-      document.write(thermostat.energyUsage())
-  </script>
+  <button id='increaseTemperature'>Up</button>
   <br>
-  <script>
-      document.write('Current temperature: ' + thermostat.temperature)
-  </script>
   <br>
-  <script>
-      document.write('Energy Mode: ')
-      thermostat.powerSaving ? document.write("On") : document.write("Off")
-  </script>
+  <button id='decreaseTemperature'>Down</button>
+  <br>
+  <br>
+  <button id='resetTemperature'>Reset</button>
+  <br>
+  <br>
+  <button id='switchMode'>Switch Mode</button>
+  <br>
+  <br>
 
+  <div>Temperature
+    <span id="temperature"></span>
+  </div>
+  <div>Energy Usage:
+    <span id="energyUsage"></span>
+  </div>
+  <div>Energy Mode:
+    <span id="energyMode"></span>
+  </div>
 
+  <!-- links to jquery -->
+  <script src='../src/Thermostat.js' ></script>
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <script src="jquery.js"></script>
 </body>

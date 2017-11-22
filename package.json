@@ -1,0 +1,27 @@
+{
+  "name": "thermostat",
+  "version": "1.0.0",
+  "description": "package",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RobertClayton/Termostat.git"
+  },
+  "keywords": [],
+  "author": "RobertClayton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RobertClayton/Termostat/issues"
+  },
+  "homepage": "https://github.com/RobertClayton/Termostat#readme"
+}

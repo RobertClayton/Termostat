@@ -39,3 +39,8 @@ Thermostat.prototype.switchMode = function () {
     this.temperature = this.MAX_POWER_SAVING;
   }
 }
+
+Thermostat.prototype.isEnergyModeOn = function() {
+  if (this.powerSaving == true) return 'On';
+  if (this.powerSaving == false) return 'Off';
+}
