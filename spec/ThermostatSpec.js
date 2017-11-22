@@ -40,5 +40,13 @@ describe('Thermostat', function(){
           .toThrow('Cannot go higher than 25 degrees when power saving');
       });
     });
+    describe('when off', function () {
+      it('has a maximum temperature of 32 degrees', function () {
+        thermostat.temperature = 32;
+        thermostat.powerSaving = false;
+        expect(function() { thermostat.increaseTemperature() })
+          .toThrow('Cannot go higher than 32 degrees');
+      });
+    });
   });
 });
