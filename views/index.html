@@ -1,21 +1,27 @@
+<!doctype html>
+<html>
 <head>
+  <meta charset="utf-8">
+  <title>Thermostat</title>
 </head>
 
 <body>
+  <h1>Thermostat</h1>
+
   <button id='increaseTemperature'>Up</button>
   <br>
   <br>
   <button id='decreaseTemperature'>Down</button>
   <br>
   <br>
-  <button id='resetTemperature'>Reset</button>
-  <br>
-  <br>
   <button id='switchMode'>Switch Mode</button>
   <br>
   <br>
+  <button id='resetTemperature'>Reset</button>
+  <br>
+  <br>
 
-  <div>Temperature
+  <div>Temperature:
     <span id="temperature"></span>
   </div>
   <div>Energy Usage:
@@ -24,12 +30,45 @@
   <div>Energy Mode:
     <span id="energyMode"></span>
   </div>
+  <br>
+  <div>London's temperature:
+    <span id="londonTemperature"></span>
+  </div>
 
-  <!-- links to jquery -->
+
+  <!-- Multiple choice -->
+  <br>
+  <section>
+    <span id="multi-choice-temperature-text"></span>
+    <span id="multi-choice-temperature"></span>
+    <select id="multi-choice-city">
+      <option value="Tokyo">Tokyo</option>
+      <option value="London">London</option>
+      <option value="New York">New York</option>
+      <option value="Paris">Paris</option>
+    </select>
+  </section>
+
+  <!-- Search Temperature -->
+  <br>
+  <section>Search for a city's temperature:
+    <br>
+    <span id="searched-temperature-text"></span>
+    <span id="searched-temperature"></span>
+    <form id="search-city-form">
+      <input id="searched-city" type="text" placeholder="Enter a city"></input>
+      <input type="submit"></input>
+    </form>
+  </section>
+
+  <!-- linking to JS & JQuery files -->
   <script src='../src/Thermostat.js' ></script>
   <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
+
   <script src="jquery.js"></script>
+
 </body>
+</html>
