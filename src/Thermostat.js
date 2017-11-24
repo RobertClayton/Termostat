@@ -18,14 +18,16 @@ Thermostat.prototype.decreaseTemperature = function() {
 Thermostat.prototype.increaseTemperature = function() {
   if (this.powerSaving === true && this.temperature === this.MAX_POWER_SAVING)
     throw ('Cannot go higher than 25 degrees when power saving');
-  if (this.powerSaving === false && this.temperature === this.MAX_TEMPERATURE)
+  if (this.powerSaving === false && this.temperature >= this.MAX_TEMPERATURE)
+    throw ('Cannot go higher than 32 degrees');
+  if (this.temperature == this.MAX_TEMPERATURE)
     throw ('Cannot go higher than 32 degrees');
   this.temperature += 1;
 };
 
 Thermostat.prototype.reset = function () {
   this.temperature = this.DEFAULT_TEMPERATURE;
-};
+}
 
 Thermostat.prototype.energyUsage = function () {
   if (this.temperature < 18) return "Low-usage";
@@ -43,4 +45,8 @@ Thermostat.prototype.switchMode = function () {
 Thermostat.prototype.isEnergyModeOn = function() {
   if (this.powerSaving == true) return 'On';
   if (this.powerSaving == false) return 'Off';
+}
+
+Thermostat.prototype.setTemperature = function(number) {
+  this.temperature = number;
 }
